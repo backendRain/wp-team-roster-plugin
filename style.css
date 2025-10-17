@@ -1,0 +1,89 @@
+/*
+ * Simple Team Members Plugin Styles v2.0
+ */
+
+/* Styles for Filter Buttons */
+.team-filter-buttons {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filter-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-button:hover {
+  background-color: #ddd;
+}
+
+.filter-button.active {
+  background-color: #0073aa;
+  color: #fff;
+  border-color: #0073aa;
+}
+
+/* Styles for Team Member Grid */
+.team-members-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+.team-loading-message {
+  text-align: center;
+  width: 100%;
+  color: #666;
+}
+
+.team-member {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  /* Transition styles for smooth filtering */
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Class added by JS to hide elements */
+.team-member.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  /* This removes the hidden element from the grid flow after transition */
+  transition-duration: 0.4s, 0s;
+  transition-property: opacity, visibility;
+  transition-delay: 0s, 0.4s;
+  visibility: hidden;
+}
+
+.team-member img {
+  max-width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.team-member div {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
